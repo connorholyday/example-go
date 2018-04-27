@@ -5,8 +5,9 @@ import (
 )
 
 func TestHello(t *testing.T) {
-    got := Hello()
-    want := "Hello, world"
+    input := "YOU"
+    got := Hello(input)
+    want := "Hello, " + input
 
     if got != want {
         t.Errorf("got '%s' want '%s'", got, want)
