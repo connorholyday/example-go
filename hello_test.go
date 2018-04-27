@@ -20,4 +20,11 @@ func TestHello(t *testing.T) {
         assertCorrectMessage(t, got, want)
     })
 
+    t.Run("Saying hello world when an empty string is supplied", func(t *testing.T) {
+        input := ""
+        got := Hello(input)
+        want := "Hello, world"
+        assertCorrectMessage(t, got, want)
+    })
+
 }

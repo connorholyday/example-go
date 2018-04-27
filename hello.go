@@ -7,7 +7,13 @@ import (
 const helloPrefix = "Hello, "
 
 func Hello(input string) string {
-    return helloPrefix + input
+    suffix := "world"
+
+    if input != "" {
+        suffix = input
+    }
+
+    return helloPrefix + suffix
 }
 
 func main() {
