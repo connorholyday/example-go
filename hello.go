@@ -4,8 +4,9 @@ import (
     "fmt"
 )
 
-const helloPrefix = "Hello, "
+const englishPrefix = "Hello, "
 const spanishHelloPrefix = "Hola, "
+const frenchHelloPrefix = "Bonjour, "
 
 func Hello(input string, language string) string {
     suffix := "world"
@@ -13,12 +14,21 @@ func Hello(input string, language string) string {
     if input != "" {
         suffix = input
     }
-    
-    if language == "Spanish" {
-        return spanishHelloPrefix + suffix
-    }
 
-    return helloPrefix + suffix
+
+    return greetingPrefix(language) + suffix
+}
+
+func greetingPrefix(language string) (prefix string) {
+    switch language {
+        case "Spanish":
+            prefix = spanishHelloPrefix
+        case "French":
+            prefix = frenchHelloPrefix
+        default:
+            prefix = englishPrefix
+    }
+    return
 }
 
 func main() {
