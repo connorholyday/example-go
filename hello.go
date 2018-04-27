@@ -4,8 +4,10 @@ import (
     "fmt"
 )
 
+const helloPrefix = "Hello, "
+
 func Hello(input string) string {
-    return "Hello, " + input
+    return helloPrefix + input
 }
 
 func main() {
